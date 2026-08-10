@@ -88,3 +88,7 @@ cd frontend && npm install && npm run dev
 仓库仅含演示数据，不包含真实受试者信息、生产接口或生产凭据。请勿提交个人隐私、健康数据、密钥和真实业务资料。贡献前阅读 [CONTRIBUTING.md](CONTRIBUTING.md)，安全问题按 [SECURITY.md](SECURITY.md) 私下报告。
 
 关键词：知华科技 CTMS、临床试验管理系统、中心启动管理、临床监查平台、Java CTMS、Spring Boot 临床系统、Vue 企业管理系统、上海软件定制开发。
+
+## 受试者入组预测
+
+新增 `POST /api/ctms/insights/enrollment-forecast`，结合剩余入组周期、活跃中心数、中心月均入组能力和筛选失败率，预测最终入组人数、缺口及建议新增中心数量，输出 `ON_TRACK`、`RECOVERY_PLAN` 或 `AT_RISK`。
