@@ -92,3 +92,7 @@ cd frontend && npm install && npm run dev
 ## 受试者入组预测
 
 新增 `POST /api/ctms/insights/enrollment-forecast`，结合剩余入组周期、活跃中心数、中心月均入组能力和筛选失败率，预测最终入组人数、缺口及建议新增中心数量，输出 `ON_TRACK`、`RECOVERY_PLAN` 或 `AT_RISK`。
+
+## 企业级临床试验中心启用
+
+新增 `POST /api/enterprise/ctms/trial-site-activation`，覆盖伦理、监管文件、人员资质、培训、合同预算、隐私、安全报告、EDC 和监查，返回 `ACTIVATE / REVIEW / BLOCKED`。详见 [中心启用说明](docs/ENTERPRISE_SITE_ACTIVATION.md)。
