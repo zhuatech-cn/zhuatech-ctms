@@ -5,8 +5,14 @@ import jakarta.validation.constraints.*;
 import org.springframework.stereotype.Service;
 import java.util.*;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class EnrollmentForecastService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result forecast(Request r) {
         double eligibleRate = 1 - r.screenFailureRate() / 100.0;
         double siteContribution = r.averageMonthlyEnrollmentPerSite() * eligibleRate * r.daysRemaining() / 30.0;
@@ -20,8 +26,14 @@ public class EnrollmentForecastService {
         if (actions.isEmpty()) actions.add("维持中心入组节奏并按周滚动复核预测");
         return new Result(projected, gap, additionalSites, status, actions);
     }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@Min(1) int targetPatients, @Min(0) int enrolledPatients, @Min(1) int daysRemaining,
                           @Min(1) int activeSites, @DecimalMin("0.1") double averageMonthlyEnrollmentPerSite,
                           @DecimalMin("0") @DecimalMax("95") double screenFailureRate) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(int projectedEnrollment, int enrollmentGap, int additionalSites, String status, List<String> actions) {}
 }
