@@ -1,0 +1,49 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "REVIEW",
+      "retainedAmount": "#4000",
+      "candidatePayment": "#6000",
+      "unearnedCap": "#60000"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "previousPaid": "37000"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "overpayment": "#1000"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "documentsComplete": "NO"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "earnedMilestones": "100001"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "previousPaid": "36000"
+    },
+    "expected": {
+      "decision": "PASS"
+    },
+    "error": false
+  }
+]
